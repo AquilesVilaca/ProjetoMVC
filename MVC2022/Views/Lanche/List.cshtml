@@ -1,0 +1,22 @@
+﻿@model LancheListViewModel
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>@Model.CategoriaAtual</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<h1>Lista de Lanches</h1>
+<div class="container">
+<div class="row">
+@foreach (var lanche in Model.lanches)
+{
+  <partial name="_LanchesResumo" for="@lanche"/>
+}
+    </div>
+</div>
+
